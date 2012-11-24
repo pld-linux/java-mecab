@@ -11,6 +11,9 @@ Source0:	http://mecab.googlecode.com/files/mecab-java-%{version}.tar.gz
 # Source0-md5:	c6e9e4b283519847b5c9c750710b7c85
 Patch0:		%{name}-opt.patch
 URL:		http://code.google.com/p/mecab/
+%if %(locale -a | grep -q '^en_US\.UTF-8$'; echo $?)
+BuildRequires:	glibc-localedb-all
+%endif
 BuildRequires:	jdk
 BuildRequires:	jpackage-utils
 BuildRequires:	libstdc++-devel
@@ -31,6 +34,8 @@ Moduł MeCab dla Javy.
 %patch0 -p1
 
 %build
+# test.java contains UTF-8 string
+export LC_ALL=en_US.UTF-8
 %{__make} \
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcxxflags}" \

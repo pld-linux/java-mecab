@@ -1,0 +1,23 @@
+--- mecab-java-0.994/Makefile.orig	2012-06-03 16:45:42.000000000 +0200
++++ mecab-java-0.994/Makefile	2012-11-24 11:49:50.940768720 +0100
+@@ -3,6 +3,9 @@
+ JAVA=java
+ JAR=jar
+ CXX=c++
++CPPFLAGS=
++CXXFLAGS=-O3 -fpic
++LDFLAGS=
+ INCLUDE=/usr/lib/jvm/java-6-openjdk/include
+ 
+ PACKAGE=org/chasen/mecab
+@@ -11,8 +14,8 @@
+ INC=`mecab-config --cflags` -I$(INCLUDE) -I$(INCLUDE)/linux
+ 
+ all:
+-	$(CXX) -O3 -c -fpic $(TARGET)_wrap.cxx  $(INC)
+-	$(CXX) -shared  $(TARGET)_wrap.o -o lib$(TARGET).so $(LIBS)
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(TARGET)_wrap.cxx  $(INC)
++	$(CXX) -shared $(LDFLAGS) $(CXXFLAGS) $(TARGET)_wrap.o -o lib$(TARGET).so $(LIBS)
+ 	$(JAVAC) $(PACKAGE)/*.java
+ 	$(JAVAC) test.java
+ 	$(JAR) cfv $(TARGET).jar $(PACKAGE)/*.class

@@ -36,6 +36,8 @@ Moduł MeCab dla Javy.
 %build
 # test.java contains UTF-8 string
 export LC_ALL=en_US.UTF-8
+# for test.java compilation using local MeCab
+export CLASSPATH=.
 %{__make} \
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcxxflags}" \

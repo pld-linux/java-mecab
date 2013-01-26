@@ -17,10 +17,11 @@ BuildRequires:	glibc-localedb-all
 BuildRequires:	jdk
 BuildRequires:	jpackage-utils
 BuildRequires:	libstdc++-devel
-BuildRequires:	mecab-devel
+BuildRequires:	mecab-devel >= 0.995
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils
+Requires:	mecab >= 0.995
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

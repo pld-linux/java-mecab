@@ -2,13 +2,13 @@
 Summary:	MeCab module for Java
 Summary(pl.UTF-8):	Moduł MeCab dla Javy
 Name:		java-mecab
-Version:	0.995
+Version:	0.996
 Release:	1
 License:	GPL v2 or LGPL v2.1 or BSD
 Group:		Libraries/Java
 #Source0Download: http://code.google.com/p/mecab/downloads/list
 Source0:	http://mecab.googlecode.com/files/mecab-java-%{version}.tar.gz
-# Source0-md5:	2890811696e577625aa97f1b4404885d
+# Source0-md5:	e50066ae2458a47b5fdc7e119ccd9fdd
 Patch0:		%{name}-opt.patch
 URL:		http://code.google.com/p/mecab/
 %if %(locale -a | grep -q '^en_US\.UTF-8$'; echo $?)
@@ -17,11 +17,11 @@ BuildRequires:	glibc-localedb-all
 BuildRequires:	jdk
 BuildRequires:	jpackage-utils
 BuildRequires:	libstdc++-devel
-BuildRequires:	mecab-devel >= 0.995
+BuildRequires:	mecab-devel >= 0.996
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils
-Requires:	mecab >= 0.995
+Requires:	mecab >= 0.996
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

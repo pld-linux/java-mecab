@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.java
 Summary:	MeCab module for Java
 Summary(pl.UTF-8):	Moduł MeCab dla Javy
 Name:		java-mecab

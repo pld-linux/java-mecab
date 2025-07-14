@@ -31,7 +31,7 @@ Moduł MeCab dla Javy.
 
 %prep
 %setup -q -n mecab-java-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 # test.java contains UTF-8 string
